@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>박윤 · Park Yun — UX Portfolio 2026</title>
+<meta name="description" content="박윤 Park Yun — 사용자를 직접 만나 문제를 정의하고 검증까지 설계하는 주니어 UX 디자이너. Selected Work 3편.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:light;
+    --paper:#fbfbfc;
+    --paper-2:#f4f4f7;
+    --card:#ffffff;
+    --ink:#1b1b22;
+    --ink-2:#54545f;
+    --ink-3:#93939f;
+    --line:#e7e7ee;
+    --line-2:#d9d9e2;
+    --slate:#33334a;
+
+    --carrot:#ff6f0f;      --carrot-deep:#cc4700;  --carrot-bg:#fff5ef;  --carrot-line:#ffd8c2;
+    --teal:#0f8c9e;        --teal-deep:#0a6b78;    --teal-bg:#e9f7f8;    --teal-line:#bce5e9;
+    --navy:#23508c;        --navy-deep:#1a3d6e;    --navy-bg:#eef3fb;    --navy-line:#cfdcef;
+
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    --wrap:1120px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:var(--sans);line-height:1.7;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+  ::selection{background:#1b1b22;color:#fff;}
+
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px;}
+
+  /* ============ top nav ============ */
+  .nav{
+    position:sticky;top:0;z-index:40;
+    background:rgba(251,251,252,.82);backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .wordmark{font-size:15px;font-weight:800;letter-spacing:-.01em;display:flex;align-items:baseline;gap:8px;}
+  .wordmark .en{font-family:var(--serif);font-weight:500;font-size:14px;color:var(--ink-3);letter-spacing:.01em;font-style:italic;}
+  .navlinks{display:flex;align-items:center;gap:4px;}
+  .navlinks a{
+    font-size:12.5px;font-weight:600;color:var(--ink-2);text-decoration:none;
+    padding:7px 12px;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap;
+  }
+  .navlinks a:hover{background:var(--paper-2);color:var(--ink);}
+  .navlinks a.cta{color:#fff;background:var(--slate);}
+  .navlinks a.cta:hover{background:#1b1b22;color:#fff;}
+  @media (max-width:620px){ .navlinks a.jump{display:none;} }
+
+  /* ============ hero ============ */
+  .hero{padding:76px 0 56px;border-bottom:1px solid var(--line);}
+  .eyebrow{
+    font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-3);
+    letter-spacing:.01em;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:clamp(44px,9vw,86px);font-weight:800;line-height:.98;letter-spacing:-.035em;
+    display:flex;align-items:baseline;gap:.34em;flex-wrap:wrap;
+  }
+  .hero h1 .en{
+    font-family:var(--serif);font-weight:400;font-style:italic;
+    font-size:clamp(26px,5vw,46px);color:var(--ink-3);letter-spacing:-.01em;
+  }
+  .hero .tagline{
+    margin-top:26px;max-width:30ch;
+    font-size:clamp(19px,2.6vw,25px);font-weight:600;line-height:1.5;letter-spacing:-.015em;
+    color:var(--ink);word-break:keep-all;text-wrap:balance;
+  }
+  .hero .tagline .u{
+    background:linear-gradient(transparent 62%, #ffe6d6 62%);padding:0 2px;
+  }
+  .hero .sub{
+    margin-top:20px;max-width:52ch;font-size:14.5px;color:var(--ink-2);word-break:keep-all;
+  }
+  .facts{
+    margin-top:30px;display:flex;flex-wrap:wrap;gap:8px;
+  }
+  .facts span{
+    font-size:12.5px;font-weight:600;color:var(--ink-2);
+    border:1px solid var(--line-2);border-radius:999px;padding:6px 14px;background:var(--card);
+  }
+  .facts span b{color:var(--ink);font-weight:800;}
+
+  /* ============ selected work index ============ */
+  .index{padding:60px 0 20px;}
+  .sec-label{
+    font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-3);
+    margin-bottom:8px;display:flex;align-items:center;gap:12px;
+  }
+  .sec-label::after{content:"";flex:1;height:1px;background:var(--line);}
+  .idx-list{margin-top:26px;border-top:1px solid var(--line);}
+  .idx-item{
+    display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;
+    padding:26px 8px;border-bottom:1px solid var(--line);
+    text-decoration:none;transition:padding .2s ease,background .2s ease;
+  }
+  .idx-item:hover{background:var(--card);padding-left:18px;padding-right:18px;}
+  .idx-num{
+    font-family:var(--serif);font-size:clamp(34px,5vw,52px);font-weight:400;
+    color:var(--ink-3);line-height:1;font-variant-numeric:tabular-nums;transition:color .2s;
+  }
+  .idx-item:hover .idx-num{color:var(--accent,var(--slate));}
+  .idx-main .t{font-size:clamp(19px,2.6vw,24px);font-weight:800;letter-spacing:-.02em;line-height:1.25;word-break:keep-all;}
+  .idx-main .d{font-size:13.5px;color:var(--ink-2);margin-top:5px;word-break:keep-all;max-width:52ch;}
+  .idx-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px;}
+  .tag{
+    font-size:10.5px;font-weight:700;letter-spacing:.02em;padding:3px 9px;border-radius:6px;
+    color:var(--accent-deep,var(--slate));background:var(--accent-bg,var(--paper-2));
+    border:1px solid var(--accent-line,var(--line-2));
+  }
+  .idx-arrow{
+    font-size:20px;color:var(--ink-3);justify-self:end;transition:transform .2s,color .2s;
+    align-self:center;
+  }
+  .idx-item:hover .idx-arrow{transform:translateX(4px);color:var(--accent,var(--slate));}
+  @media (max-width:640px){
+    .idx-item{grid-template-columns:auto 1fr;gap:16px;padding:20px 4px;}
+    .idx-arrow{display:none;}
+  }
+
+  /* ============ project section ============ */
+  .project{padding:70px 0 20px;scroll-margin-top:64px;}
+  .p-head{
+    display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:end;
+    padding-bottom:32px;border-bottom:2px solid var(--accent,var(--slate));
+  }
+  .p-kicker{
+    display:inline-flex;align-items:center;gap:9px;margin-bottom:16px;
+    font-size:12px;font-weight:800;letter-spacing:.05em;
+    color:var(--accent-deep,var(--slate));
+  }
+  .p-kicker .pnum{font-family:var(--serif);font-style:italic;font-weight:500;font-size:15px;}
+  .p-kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--accent,var(--slate));}
+  .p-head h2{font-size:clamp(28px,4.5vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.1;word-break:keep-all;text-wrap:balance;}
+  .p-head .lede{margin-top:16px;font-size:15px;color:var(--ink-2);line-height:1.72;word-break:keep-all;max-width:48ch;}
+  .p-meta{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;}
+  .p-meta .m .k{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:3px;}
+  .p-meta .m .v{font-size:13px;font-weight:600;color:var(--ink);word-break:keep-all;}
+  .p-meta .m .v .concept{color:var(--accent-deep,var(--slate));}
+  @media (max-width:760px){
+    .p-head{grid-template-columns:1fr;gap:26px;align-items:start;}
+  }
+
+  /* slides stack */
+  .slides{margin-top:34px;display:flex;flex-direction:column;gap:18px;}
+  .slide{
+    position:relative;border-radius:12px;overflow:hidden;
+    border:1px solid var(--line);background:var(--card);
+    box-shadow:0 1px 3px rgba(20,20,30,.05),0 12px 30px -18px rgba(20,20,30,.18);
+    cursor:zoom-in;transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .slide:hover{transform:translateY(-3px);box-shadow:0 2px 6px rgba(20,20,30,.06),0 20px 40px -20px rgba(20,20,30,.28);}
+  .slide img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--paper-2);}
+  .slide .zoom{
+    position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:8px;
+    background:rgba(27,27,34,.62);color:#fff;display:grid;place-items:center;
+    font-size:14px;opacity:0;transition:opacity .18s;backdrop-filter:blur(4px);
+  }
+  .slide:hover .zoom{opacity:1;}
+  .backtop{
+    display:inline-flex;align-items:center;gap:6px;margin-top:22px;
+    font-size:12.5px;font-weight:700;color:var(--ink-3);text-decoration:none;
+  }
+  .backtop:hover{color:var(--ink);}
+
+  /* ============ footer ============ */
+  .foot{margin-top:80px;border-top:1px solid var(--line);background:var(--card);}
+  .foot .wrap{padding:56px 24px 64px;}
+  .foot .disclaimer{
+    font-size:12.5px;color:var(--ink-3);max-width:60ch;word-break:keep-all;
+    padding:14px 16px;border-left:2px solid var(--line-2);margin-bottom:40px;line-height:1.7;
+  }
+  .foot-grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;}
+  .foot .fm .name{font-size:22px;font-weight:800;letter-spacing:-.02em;}
+  .foot .fm .name .en{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--ink-3);font-size:17px;margin-left:8px;}
+  .foot .fm .role{font-size:13px;color:var(--ink-2);margin-top:6px;}
+  .foot .contact{text-align:right;display:flex;flex-direction:column;gap:5px;}
+  .foot .contact a,.foot .contact span{font-size:13.5px;color:var(--ink-2);text-decoration:none;font-weight:600;}
+  .foot .contact a:hover{color:var(--ink);}
+  .foot .copy{margin-top:38px;font-size:11.5px;color:var(--ink-3);letter-spacing:.02em;}
+  @media (max-width:560px){ .foot-grid{grid-template-columns:1fr;align-items:start;} .foot .contact{text-align:left;} }
+
+  /* ============ lightbox ============ */
+  .lb{
+    position:fixed;inset:0;z-index:90;display:none;
+    background:rgba(16,16,20,.94);
+    align-items:center;justify-content:center;
+    padding:24px;touch-action:pinch-zoom;
+  }
+  .lb.on{display:flex;}
+  .lb img{
+    max-width:100%;max-height:100%;width:auto;height:auto;
+    border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.5);
+    animation:pop .2s ease;
+  }
+  @keyframes pop{from{opacity:0;transform:scale(.98);}to{opacity:1;transform:scale(1);}}
+  .lb-btn{
+    position:fixed;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);
+    width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer;
+    display:grid;place-items:center;transition:background .15s;
+  }
+  .lb-btn:hover{background:rgba(255,255,255,.22);}
+  .lb-btn:focus-visible{outline:2px solid #fff;outline-offset:2px;}
+  .lb-close{top:22px;right:22px;font-size:20px;}
+  .lb-prev{left:20px;top:50%;transform:translateY(-50%);}
+  .lb-next{right:20px;top:50%;transform:translateY(-50%);}
+  .lb-count{
+    position:fixed;bottom:22px;left:50%;transform:translateX(-50%);
+    color:rgba(255,255,255,.8);font-size:12.5px;font-weight:600;letter-spacing:.06em;
+    font-variant-numeric:tabular-nums;
+  }
+  @media (max-width:620px){
+    .lb-prev{left:8px;} .lb-next{right:8px;} .lb-btn{width:42px;height:42px;font-size:19px;}
+  }
+
+  /* progress reading bar */
+  .prog{position:fixed;top:0;left:0;height:2px;background:var(--slate);z-index:50;width:0;transition:width .1s linear;}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none!important;animation:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="prog" id="prog"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="wordmark">박윤<span class="en">Park&nbsp;Yun</span></div>
+    <div class="navlinks">
+      <a class="jump" href="#daangn">당근 지름길</a>
+      <a class="jump" href="#seamless">Seamless UX</a>
+      <a class="jump" href="#hyundai">현대 인증중고차</a>
+      <a class="cta" href="mailto:00yunpark@gmail.com">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">UX &amp; Service Design — Selected Work, 2026</div>
+    <h1>박윤 <span class="en">Park Yun</span></h1>
+    <p class="tagline">사용자를 직접 만나 <span class="u">문제를 정의</span>하고, 화면 너머 <span class="u">검증까지 설계</span>하는 주니어 UX 디자이너</p>
+    <p class="sub">기획을 강점으로, 예산과 팀 없이도 설문(N=57)과 AI 교차검증 리서치로 세 편의 컨셉 프로젝트를 문제 정의부터 검증 계획까지 완주했습니다. 자동차 인포테인먼트 QA와 CX 운영 경험이 리서치의 신뢰를 받쳐 줍니다.</p>
+    <div class="facts">
+      <span><b>기획</b> &gt; 디자인</span>
+      <span>유저 리서치 · <b>검증 설계</b></span>
+      <span>Figma · <b>AI 리서치 워크플로우</b></span>
+      <span><b>3</b> Selected Projects</span>
+    </div>
+  </div>
+</header>
+
+<!-- SELECTED WORK INDEX -->
+<section class="index">
+  <div class="wrap">
+    <div class="sec-label">Selected Work</div>
+    <div class="idx-list">
+
+      <a class="idx-item" href="#daangn" style="--accent:#ff6f0f;--accent-deep:#cc4700;--accent-bg:#fff5ef;--accent-line:#ffd8c2;">
+        <span class="idx-num">01</span>
+        <div class="idx-main">
+          <div class="t">당근 지름길 — 주민이 공유하는 우리동네 빠른길</div>
+          <div class="d">지도앱에 없는 생활 지름길을 주민이 직접 발견·판단·공유하는 UGC 서비스. 문제 정의부터 검증 계획까지.</div>
+          <div class="idx-tags">
+            <span class="tag">서비스 기획</span><span class="tag">UGC · 양면 설계</span><span class="tag">유저 리서치 N=57</span>
+          </div>
+        </div>
+        <span class="idx-arrow">→</span>
+      </a>
+
+      <a class="idx-item" href="#seamless" style="--accent:#0f8c9e;--accent-deep:#0a6b78;--accent-bg:#e9f7f8;--accent-line:#bce5e9;">
+        <span class="idx-num">02</span>
+        <div class="idx-main">
+          <div class="t">Seamless UX — 무인 자율주행 택시 안내 경험</div>
+          <div class="d">승객 불안을 낮추는 Status→Reason→Action 안내 프레임. 인캐빈 디스플레이와 모바일을 심리스하게 연결.</div>
+          <div class="idx-tags">
+            <span class="tag">모빌리티 · HMI</span><span class="tag">멀티서피스</span><span class="tag">경쟁 티어다운</span>
+          </div>
+        </div>
+        <span class="idx-arrow">→</span>
+      </a>
+
+      <a class="idx-item" href="#hyundai" style="--accent:#23508c;--accent-deep:#1a3d6e;--accent-bg:#eef3fb;--accent-line:#cfdcef;">
+        <span class="idx-num">03</span>
+        <div class="idx-main">
+          <div class="t">현대 인증중고차 — 차량 상태 판단 UX 개선</div>
+          <div class="d">분산된 점검·고지 정보를 구매 판단 흐름에 맞춰 재구성. Key First · Visual Clarity · Step by Step.</div>
+          <div class="idx-tags">
+            <span class="tag">정보구조 IA</span><span class="tag">B2C 커머스</span><span class="tag">브랜드 정합</span>
+          </div>
+        </div>
+        <span class="idx-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECT 01 · 당근 ===== -->
+<section class="project" id="daangn" style="--accent:#ff6f0f;--accent-deep:#cc4700;--accent-bg:#fff5ef;--accent-line:#ffd8c2;">
+  <div class="wrap">
+    <div class="p-head">
+      <div>
+        <div class="p-kicker"><span class="dot"></span><span class="pnum">Project 01</span> · SERVICE DESIGN</div>
+        <h2>당근 지름길</h2>
+        <p class="lede">지도앱에는 없는 동네 지름길을, 주민이 직접 발견(Discover)하고 판단(Evaluate)하며 공유(Contribute)하는 UGC 루프로 설계했습니다. 거리별(800m/2km) 플로우 분기와 콜드스타트 시드 전략, 그리고 가설·측정지표·검증방법을 담은 검증 계획까지 관통합니다.</p>
+      </div>
+      <div class="p-meta">
+        <div class="m"><div class="k">Role</div><div class="v">UX/UI 기획 · 디자인</div></div>
+        <div class="m"><div class="k">Type</div><div class="v"><span class="concept">개인 컨셉 프로젝트</span></div></div>
+        <div class="m"><div class="k">Duration</div><div class="v">약 2개월</div></div>
+        <div class="m"><div class="k">Tools</div><div class="v">Figma · AI 리서치 툴</div></div>
+      </div>
+    </div>
+    <div class="slides" data-project="당근 지름길"></div>
+    <a class="backtop" href="#top">↑ 목록으로</a>
+  </div>
+</section>
+
+<!-- ===== PROJECT 02 · Seamless ===== -->
+<section class="project" id="seamless" style="--accent:#0f8c9e;--accent-deep:#0a6b78;--accent-bg:#e9f7f8;--accent-line:#bce5e9;">
+  <div class="wrap">
+    <div class="p-head">
+      <div>
+        <div class="p-kicker"><span class="dot"></span><span class="pnum">Project 02</span> · MOBILITY / HMI</div>
+        <h2>Seamless UX</h2>
+        <p class="lede">무인 자율주행 택시에서 승객이 느끼는 불안을 낮추기 위해, 차량이 지금 무엇을(Status) 왜(Reason) 어떻게(Action) 하는지 안내하는 프레임을 설계했습니다. 인캐빈 디스플레이와 모바일을 심리스하게 연동하고, 감속·경로변경·긴급정차 세 시나리오로 검증했습니다. Tesla·Waymo·Zoox 티어다운이 기반입니다.</p>
+      </div>
+      <div class="p-meta">
+        <div class="m"><div class="k">Role</div><div class="v">UX/UI 기획 · 디자인</div></div>
+        <div class="m"><div class="k">Type</div><div class="v"><span class="concept">개인 컨셉 프로젝트</span></div></div>
+        <div class="m"><div class="k">Duration</div><div class="v">약 2개월</div></div>
+        <div class="m"><div class="k">Tools</div><div class="v">Figma · AI 리서치 툴</div></div>
+      </div>
+    </div>
+    <div class="slides" data-project="Seamless UX"></div>
+    <a class="backtop" href="#top">↑ 목록으로</a>
+  </div>
+</section>
+
+<!-- ===== PROJECT 03 · 현대차 ===== -->
+<section class="project" id="hyundai" style="--accent:#23508c;--accent-deep:#1a3d6e;--accent-bg:#eef3fb;--accent-line:#cfdcef;">
+  <div class="wrap">
+    <div class="p-head">
+      <div>
+        <div class="p-kicker"><span class="dot"></span><span class="pnum">Project 03</span> · INFORMATION ARCHITECTURE</div>
+        <h2>현대 인증중고차 — 차량 상태 판단 UX 개선</h2>
+        <p class="lede">인증중고차 구매자가 흩어진 점검·고지 정보 때문에 차량 상태를 판단하기 어려운 문제를 다뤘습니다. Key First(핵심 먼저) · Visual Clarity(한눈에) · Step by Step(흐름대로) 세 기둥으로 정보구조를 구매 판단 흐름에 맞춰 재설계했습니다.</p>
+      </div>
+      <div class="p-meta">
+        <div class="m"><div class="k">Role</div><div class="v">UX/UI 기획 · 디자인</div></div>
+        <div class="m"><div class="k">Type</div><div class="v"><span class="concept">개인 컨셉 프로젝트</span></div></div>
+        <div class="m"><div class="k">Duration</div><div class="v">약 2개월</div></div>
+        <div class="m"><div class="k">Tools</div><div class="v">Figma · AI 리서치 툴</div></div>
+      </div>
+    </div>
+    <div class="slides" data-project="현대 인증중고차"></div>
+    <a class="backtop" href="#top">↑ 목록으로</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <p class="disclaimer">위 세 편은 모두 <b>개인 컨셉 프로젝트</b>입니다. 실제 출시된 제품이 아니라, 사용자 리서치를 근거로 문제를 정의하고 해결안과 <b>검증 계획(목표치)</b>까지 설계한 자기주도 프로젝트입니다. 브랜드명(당근·현대)은 문제 상황을 구체화하기 위한 소재로 사용했습니다.</p>
+    <div class="foot-grid">
+      <div class="fm">
+        <div class="name">박윤<span class="en">Park Yun</span></div>
+        <div class="role">주니어 UX 디자이너 · 기획 &gt; 디자인</div>
+      </div>
+      <div class="contact">
+        <a href="mailto:00yunpark@gmail.com">00yunpark@gmail.com</a>
+        <span>Seoul, KR</span>
+      </div>
+    </div>
+    <div class="copy">© 2026 Park Yun. Selected UX work.</div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="슬라이드 확대 보기">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="닫기">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="이전">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="다음">›</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+<span id="top" style="position:absolute;top:0;"></span>
+
+<script>
+(function(){
+  // slide ranges (1-indexed, matches images/slide-NN.jpg)
+  var PROJECTS = {
+    "당근 지름길":      {from:11, to:22},
+    "Seamless UX":     {from:1,  to:10},
+    "현대 인증중고차":  {from:23, to:34}
+  };
+  var pad = function(n){ return (n<10?'0':'')+n; };
+
+  // build ordered gallery + populate each section
+  var gallery = [];  // {src, project}
+  document.querySelectorAll('.slides').forEach(function(host){
+    var name = host.getAttribute('data-project');
+    var r = PROJECTS[name];
+    for(var i=r.from; i<=r.to; i++){
+      var src = 'images/slide-'+pad(i)+'.jpg';
+      var gi = gallery.length;
+      gallery.push({src:src, project:name});
+      var fig = document.createElement('div');
+      fig.className = 'slide';
+      fig.setAttribute('data-gi', gi);
+      var isFirst = (i===r.from);
+      fig.innerHTML =
+        '<img '+(isFirst?'':'loading="lazy" ')+'src="'+src+'" alt="'+name+' 슬라이드 '+(i-r.from+1)+'">'+
+        '<span class="zoom" aria-hidden="true">⤢</span>';
+      host.appendChild(fig);
+    }
+  });
+
+  // lightbox
+  var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'),
+      lbCount=document.getElementById('lbCount'), cur=0;
+  function show(i){
+    if(i<0)i=gallery.length-1; if(i>=gallery.length)i=0;
+    cur=i;
+    lbImg.src=gallery[i].src;
+    lbImg.alt=gallery[i].project+' 슬라이드';
+    lbCount.textContent=gallery[i].project+'  ·  '+(i+1)+' / '+gallery.length;
+  }
+  function open(i){ show(i); lb.classList.add('on'); document.body.style.overflow='hidden'; }
+  function close(){ lb.classList.remove('on'); document.body.style.overflow=''; }
+
+  document.querySelectorAll('.slide').forEach(function(s){
+    s.addEventListener('click',function(){ open(+s.getAttribute('data-gi')); });
+  });
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbPrev').addEventListener('click',function(e){e.stopPropagation();show(cur-1);});
+  document.getElementById('lbNext').addEventListener('click',function(e){e.stopPropagation();show(cur+1);});
+  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')close();
+    else if(e.key==='ArrowLeft')show(cur-1);
+    else if(e.key==='ArrowRight')show(cur+1);
+  });
+  // swipe
+  var sx=0;
+  lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-sx;
+    if(Math.abs(dx)>50) show(cur+(dx<0?1:-1));
+  },{passive:true});
+
+  // reading progress
+  var prog=document.getElementById('prog');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);
+    prog.style.width=(p*100)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
