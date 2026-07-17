@@ -29,6 +29,7 @@
 
     --serif:'Fraunces',Georgia,'Times New Roman',serif;
     --sans:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    --mono:ui-monospace,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;
     --wrap:1120px;
   }
 
@@ -196,6 +197,31 @@
   .foot .contact a:hover{color:var(--ink);}
   .foot .copy{margin-top:38px;font-size:11.5px;color:var(--ink-3);letter-spacing:.02em;}
   @media (max-width:560px){ .foot-grid{grid-template-columns:1fr;align-items:start;} .foot .contact{text-align:left;} }
+
+  /* colophon (build note) */
+  .colophon{
+    margin-top:40px;padding:20px 22px;
+    border:1px solid var(--line);border-radius:14px;background:var(--paper);
+  }
+  .colophon .cl-label{
+    font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-3);margin-bottom:10px;display:flex;align-items:center;gap:9px;
+  }
+  .colophon .cl-label::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--slate);}
+  .colophon p{font-size:13px;color:var(--ink-2);line-height:1.72;word-break:keep-all;max-width:64ch;}
+  .colophon p b{color:var(--ink);font-weight:700;}
+  .colophon .pipe{
+    margin-top:15px;display:flex;gap:7px;flex-wrap:wrap;align-items:center;
+    font-family:var(--mono);font-size:11.5px;
+  }
+  .colophon .pipe .node{
+    padding:4px 10px;border-radius:7px;border:1px solid var(--line-2);background:var(--card);
+    color:var(--ink-2);font-weight:500;white-space:nowrap;
+  }
+  .colophon .pipe .node.key{
+    color:#fff;background:var(--slate);border-color:var(--slate);font-weight:600;
+  }
+  .colophon .pipe .arw{color:var(--ink-3);font-family:var(--sans);}
 
   /* ============ lightbox ============ */
   .lb{
@@ -385,6 +411,18 @@
 <footer class="foot">
   <div class="wrap">
     <p class="disclaimer">위 세 편은 모두 <b>개인 컨셉 프로젝트</b>입니다. 실제 출시된 제품이 아니라, 사용자 리서치를 근거로 문제를 정의하고 해결안과 <b>검증 계획(목표치)</b>까지 설계한 자기주도 프로젝트입니다. 브랜드명(당근·현대)은 문제 상황을 구체화하기 위한 소재로 사용했습니다.</p>
+
+    <div class="colophon">
+      <div class="cl-label">Colophon · 이 사이트를 만든 방법</div>
+      <p>Figma로 작업한 케이스 스터디를 <b>Claude Code</b>로 정적 웹 갤러리로 옮겨 만들었습니다. 반응형 레이아웃과 라이트박스, 이미지 최적화를 AI 페어 코딩으로 구성했고, 이후 내용 수정도 Claude Code로 직접 이어 갑니다. 서체는 <b>Pretendard</b>와 <b>Fraunces</b>.</p>
+      <div class="pipe">
+        <span class="node">Figma</span>
+        <span class="arw">→</span>
+        <span class="node key">Claude Code</span>
+        <span class="arw">→</span>
+        <span class="node">GitHub Pages</span>
+      </div>
+    </div>
     <div class="foot-grid">
       <div class="fm">
         <div class="name">박윤<span class="en">Park Yun</span></div>
